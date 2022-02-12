@@ -2,11 +2,11 @@ package com.java;
 
 public class Perro {
 	
-	String raza;
-	String color;
-	String tamano;
-	String nombre;
-	int numeroPatas;
+	private String raza;
+	private String color;
+	private String tamano;
+	private String nombre;
+	private int numeroPatas;
 	
 	// CONSTRUCTORES
 	
@@ -37,6 +37,57 @@ public class Perro {
 	public Perro() {
 		
 	}
+
+	// Encapsulation
+	
+	// GETTERS AND SETTERS
+	
+	public String getRaza() {
+		return raza;
+	}
+
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getTamano() {
+		return tamano;
+	}
+
+	public void setTamano(String tamano) {
+		this.tamano = tamano;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getNumeroPatas() {
+		return numeroPatas;
+	}
+
+	public void setNumeroPatas(int numeroPatas) {
+		if(numeroPatas>10) {
+			this.numeroPatas = -1;
+		}else {
+			this.numeroPatas = numeroPatas;
+		}
+		
+	}
+	
+	
 	
 	
 	
