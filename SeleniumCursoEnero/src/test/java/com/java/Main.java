@@ -12,6 +12,14 @@ public class Main {
 		chihuahua.nombre = "Mero Macho";
 		chihuahua.numeroPatas = 4;
 		
+		// Perro 1
+		Perro perro1 = new Perro("Chihuahua", "Cafe", "Chico", "Mero Macho");
+		
+		// Perro 2
+		
+		
+		
+		
 		
 
 	}
