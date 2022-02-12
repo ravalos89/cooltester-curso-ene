@@ -7,6 +7,8 @@ public class Main {
 		Padre padre1 = new Padre("Jose", 1.80);
 		System.out.println("Jose tiene los ojos "+ padre1.colorOjos());
 		
+		Padre padre3 = new Hijo("PA", 1.54);
+		
 		Hijo hijo1 = new Hijo("Juan", 1.75);
 		System.out.println("Juan tiene los ojos "+ hijo1.colorOjos());
 		System.out.println("Juan tiene el cabello color "+ hijo1.colorCabello());
