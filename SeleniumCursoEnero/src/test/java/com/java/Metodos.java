@@ -27,6 +27,7 @@ public class Metodos {
 		System.out.println(suma2Numeros);
 		System.out.println(suma3Numeros);
 		System.out.println(isReallyHuman);
+		//System.out.println(suma2NumerosDouble);
 		
 		
 		
