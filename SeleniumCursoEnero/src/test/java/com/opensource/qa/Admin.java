@@ -144,5 +144,33 @@ public class Admin {
 		driver.close();
 		
 	}
+	
+	@Test
+	public void tc003AdminAddNewUser() {
+
+		// Step 1
+		Reporter.log("Open Browser \"OrangeHRM\" web page");
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chrome/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		driver.manage().window().maximize();
+
+		// Step 2
+		Reporter.log("Enter Username, Password and click Login");
+		driver.findElement(By.id("txtUsername")).sendKeys(username);
+		driver.findElement(By.id("txtPassword")).sendKeys(password);
+		driver.findElement(By.id("btnLogin")).click();
+		
+		// Step 3
+		Reporter.log("Validate that you have logged in successfully");
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='welcome']")));
+		
+		// Step 4
+		Reporter.log("Click Admin - Go to the admin page");
+		driver.findElement(By.xpath("//a[@id='menu_admin_viewAdminModule']")).click();
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		
+	}
 
 }
