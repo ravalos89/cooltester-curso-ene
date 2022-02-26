@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class Admin {
 	
 	// Instancias de objeto
-	String username, password, msgNoRecords, userNotExist, newEmployee, newUser;
+	String username, password, msgNoRecords, userNotExist, newEmployee, newUser,newpassword;
 	
 	@BeforeTest
 	public void beforeTest() {
@@ -28,6 +28,7 @@ public class Admin {
 		msgNoRecords = "No Records Found";
 		newEmployee = "";
 		newUser = "";
+		newpassword="";
 		
 	}
 
@@ -185,6 +186,22 @@ public class Admin {
 		// Step 7
 		Reporter.log("Enter a Valid User Name");
 		driver.findElement(By.xpath("//*[@id=\"systemUser_userName\"]")).sendKeys(newUser);
+		
+		// Step 8 
+		Reporter.log("Enter new password ");
+		driver.findElement(By.xpath("//*[@id=\"systemUser_password\"]")).sendKeys(newpassword);
+		
+		// Step 9
+		Reporter.log("Enter  confirm password ");
+		driver.findElement(By.xpath("//*[@id=\"systemUser_confirmPassword\"]")).sendKeys(newpassword);
+		
+		//Step10 
+		Reporter.log("Click Save");
+		driver.findElement(By.xpath("//*[@id=\"btnSave\"]")).click();
+		
+		
+		
+		
 	}
 
 }
