@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class Admin {
 	
 	// Instancias de objeto
-	String username, password, msgNoRecords, userNotExist;
+	String username, password, msgNoRecords, userNotExist, newEmployee, newUser;
 	
 	@BeforeTest
 	public void beforeTest() {
@@ -26,6 +26,8 @@ public class Admin {
 		password = "admin123";
 		userNotExist = "XYZ";
 		msgNoRecords = "No Records Found";
+		newEmployee = "";
+		newUser = "";
 		
 	}
 
@@ -171,6 +173,18 @@ public class Admin {
 		driver.findElement(By.xpath("//a[@id='menu_admin_viewAdminModule']")).click();
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		
+		// Step 5 
+		Reporter.log("Click Add Button");
+		driver.findElement(By.xpath("//*[@id=\"btnAdd\"]]")).click();
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		
+		// Step 6
+		Reporter.log("Enter a Valid Employee Name");
+		driver.findElement(By.xpath("//*[@id=\"systemUser_employeeName_empName\"]")).sendKeys(newEmployee);
+	    
+		// Step 7
+		Reporter.log("Enter a Valid User Name");
+		driver.findElement(By.xpath("//*[@id=\"systemUser_userName\"]")).sendKeys(newUser);
 	}
 
 }
