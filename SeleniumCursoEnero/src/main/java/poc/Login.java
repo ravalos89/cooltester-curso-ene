@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import base.Base;
 import base.GlobalVariables;
 
-public class Login extends Base{
+public class Login extends Base {
 
 	public Login(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	/*
 	 * Objects
 	 */
@@ -20,8 +20,7 @@ public class Login extends Base{
 	By btnLogin = By.id("btnLogin");
 	By lnkWelcome = By.xpath("//a[@id='welcome']");
 	By lnkLogout = By.xpath("//a[contains(@href, 'logout')]");
-	
-	
+
 	/*
 	 * Customize methods
 	 */
@@ -31,16 +30,17 @@ public class Login extends Base{
 		type(txtUsername, username);
 		type(txtPassword, password);
 		click(btnLogin);
-		waitForElementPresent(lnkWelcome);		
+		//Token
+		waitForElementPresent(lnkWelcome);
 	}
-	
-	public void logOut()
-	{
+
+	public void logOut() {
 		reporterLog("Log Out of Orange");
 		click(lnkWelcome);
 		click(lnkLogout);
 		implicitWait();
-			
+		closeBrowser();
+
 	}
 
 }

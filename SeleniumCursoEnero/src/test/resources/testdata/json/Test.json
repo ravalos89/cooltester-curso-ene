@@ -1,0 +1,13 @@
+{
+	"superUser":
+	{
+		"username": "admin",
+		"password": "admin123"
+	},
+	
+	"adminUser":
+	{
+		"username": "admin",
+		"password": "pwd123"
+	}
+}
