@@ -21,6 +21,7 @@ public class Login extends Base{
 	By lnkWelcome = By.xpath("//a[@id='welcome']");
 	By lnkLogout = By.xpath("//a[contains(@href, 'logout')]");
 	
+	
 	/*
 	 * Customize methods
 	 */
@@ -31,6 +32,15 @@ public class Login extends Base{
 		type(txtPassword, password);
 		click(btnLogin);
 		waitForElementPresent(lnkWelcome);		
+	}
+	
+	public void logOut()
+	{
+		reporterLog("Log Out of Orange");
+		click(lnkWelcome);
+		click(lnkLogout);
+		implicitWait();
+			
 	}
 
 }
