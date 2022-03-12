@@ -29,9 +29,11 @@ public class Login extends Base {
 		launchBrowser(GlobalVariables.QA_URL);
 		type(txtUsername, username);
 		type(txtPassword, password);
+//		takeScreenshot("AfterEnteringCred");
 		click(btnLogin);
 		//Token
 		waitForElementPresent(lnkWelcome);
+//		takeScreenshot("WelcomePage");
 	}
 
 	public void logOut() {
@@ -39,6 +41,7 @@ public class Login extends Base {
 		click(lnkWelcome);
 		click(lnkLogout);
 		implicitWait();
+//		takeScreenshot("Loggedout");
 		closeBrowser();
 
 	}

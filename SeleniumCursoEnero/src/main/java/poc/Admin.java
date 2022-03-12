@@ -27,15 +27,18 @@ public class Admin extends Base{
 	public void searchUser(String username) {
 		reporterLog("Searching username..."+username);
 		click(lnkAdminHeader);
+		takeScreenshot("AfterClickAdmin");
 		type(txtUsername, username);
 		click(btnSearch);
 		implicitWait();	
+		takeScreenshot("AfterClickSearch");
 	}
 	
 	public void validateUsernameTable(String expectedUser) {
 		reporterLog("Validate username "+expectedUser);
 		String actualUsername = getText(tblUsername);
 		Assert.assertEquals(actualUsername, expectedUser);
+		takeScreenshot("AfterValidationTable");
 	}
 
 }

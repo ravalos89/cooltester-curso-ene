@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA_Regression" parallel="tests" thread-count="5">
+
+	<test name="GoogleTests">
+		<classes>
+			<class name="com.google.FirstTest" />
+		</classes>
+		
+	</test> <!-- Test -->
+	
+	<test name="AdminTests">
+		<classes>
+			<class name="com.opensource.qa.Admin" />
+			<class name="com.opensource.qa.AdminPOM" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="AdminPOMTests">
+		<classes>
+			<class name="com.opensource.qa.AdminPOM" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
