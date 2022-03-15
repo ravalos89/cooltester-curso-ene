@@ -6,6 +6,10 @@ public class Ejercicio4 {
 		
 		// IF ELSE IF
 		
+		int[] array = {1,3,4,6,6,3,1,8,9,3};
+		// Imprimir solo los valores sin repetir
+		// Output: 1,3,4,8,9
+		
 		int x = 5;
 		int y = 5;
 		

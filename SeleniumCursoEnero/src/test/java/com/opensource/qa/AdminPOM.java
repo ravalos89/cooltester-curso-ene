@@ -33,16 +33,18 @@ public class AdminPOM {
 		admin = new Admin(driver);
 
 		// Test Data JSON
-//		username = base.getJSONData(jsonCredentials, "username");
-//		password = base.getJSONData(jsonCredentials, "password");
-//		userNotExist = base.getJSONData(jsonAdminTestData, "userNotExist");
-//		msgNoRecords = base.getJSONData(jsonAdminTestData, "msgNoRecords");
+		username = base.getJSONData(jsonCredentials, "username");
+		password = base.getJSONData(jsonCredentials, "password");
+		userNotExist = base.getJSONData(jsonAdminTestData, "userNotExist");
+		msgNoRecords = base.getJSONData(jsonAdminTestData, "msgNoRecords");
+		
+		password = base.getEncryptedPassword(password);
 		
 		// Test Data Excel
-		username = base.getCellData("Credentials", 1, 0);
-		password = base.getCellData("Credentials", 1, 1);
-		userNotExist = base.getCellData("AdminTestData", 1, 0);
-		msgNoRecords = base.getCellData("AdminTestData", 1, 1);
+//		username = base.getCellData("Credentials", 1, 0);
+//		password = base.getCellData("Credentials", 1, 1);
+//		userNotExist = base.getCellData("AdminTestData", 1, 0);
+//		msgNoRecords = base.getCellData("AdminTestData", 1, 1);
 		
 //		newEmployee = "";
 //		newUser = "";

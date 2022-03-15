@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -91,6 +92,7 @@ public class Base {
 	public void click(By locator) {
 		try {
 			driver.findElement(locator).click();
+//			takeScreenshot("click"+locator.toString());
 		}catch(NoSuchElementException e) {
 			e.printStackTrace();
 		}
@@ -218,5 +220,16 @@ public class Base {
 			return null;
 		}
 
+	}
+	
+	/*
+	 * get Encrypted Password
+	 * @param String passwordEncrypt
+	 * @author Ricardo Avalos
+	 */
+	
+	public String getEncryptedPassword(String encryptedPwd) {
+		byte[] decodedBytes = Base64.decodeBase64(encryptedPwd);
+		return new String(decodedBytes);
 	}
 }
